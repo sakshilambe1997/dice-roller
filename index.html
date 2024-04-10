@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background: #56CCF2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        .dice-container{
+            background-color: white;
+            margin: 80px auto;
+            width: 300px;
+            height: 320px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .heading{
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .dice-images{
+            height: 180px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn{
+            display: block;
+            margin: 20px auto;
+            padding: 7px 18px;
+            border-radius: 10px;
+            border: 2px solid blue;
+            font-weight: bold;
+            font-size: 18px;
+            background: #56CCF2;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+             cursor: pointer;
+        }
+
+        .btn:hover{
+            cursor: pointer;
+            background: #B2FEFA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        @keyframes roll{
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate{
+            
+        }
+
+
+
+        @media screen and (min-width:300px) and (max-width:400px){
+
+            .dice-container{
+            margin: 120px auto;
+            width: 70%;
+            height: auto;
+            padding: 10px;
+        }
+
+        .heading{
+            font-size: 22px;
+        }
+
+        .dice-images{
+            height: 120px;
+    
+        }
+
+        .btn{
+           
+            padding: 5px 15px;
+            font-size: 15px;
+        }
+        }
+    </style> 
+</head>
+<body>
+    <div class="dice-container">
+        <h1 class="heading">DICE ROLLER</h1>
+        <img src="./default.png" class="dice-images" id="dice-roll-img"/>
+        <button type="button" class="btn" onclick="diceRoll()"> Dice Roll</button>
+    </div>
+
+    <script>
+        function diceRoll(){
+            const min=1;
+            const max=6;
+            const mathValue=Math.round(Math.random()*(max-min)+(min));
+            console.log(mathValue);
+
+            const imageElement=document.getElementById('dice-roll-img');
+
+            switch(mathValue){
+                case(1):
+                imageElement.src="./one.png";
+                break;
+
+                case(2):
+                imageElement.src="./two.png";
+                break;
+
+                case(3):
+                imageElement.src="./three.png";
+                break;
+
+                case(4):
+                imageElement.src="./four.png";
+                break;
+
+                case(5):
+                imageElement.src="./five.png";
+                break;
+                case(1):
+                imageElement.src="./six.png";
+                break; 
+            }
+        
+        }
+    </script>
+    
+</body>
+</html>
